@@ -1,0 +1,151 @@
+---
+import MulgaraLogo from '../assets/logo_low.png';
+import MulgaraMobileLogo from '../assets/letra_low.png';
+import background from '../assets/background.svg';
+const year = new Date().getFullYear();
+---
+
+<div id="container">
+  <img id="background" src={background.src} alt="" fetchpriority="high" />
+		<main class="container">
+      <picture class="logo-wrapper">
+        <!-- Logo mobile -->
+        <source src={MulgaraMobileLogo.src} media="(max-width: 640px)" />
+        <!-- Logo desktop -->
+        <img
+          src={MulgaraLogo.src}
+          alt="MULGARA 3D"
+          class="logo"
+        />
+      </picture>
+
+      <h1>Impresiones 3D en Filamento(FDM) y Resina(UV) ❤️</h1>
+
+      <a
+      href="https://instagram.com/mulgara3d"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="instagram"
+      aria-label="Seguinos en Instagram"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="28"
+          height="28"
+          fill="currentColor"
+        >
+          <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/>
+        </svg>
+      </a>
+    </main>
+    <footer class="footer">
+  © {year} Mulgara. Argentina.
+</footer>
+</div>
+
+<style>
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		filter: blur(100px);
+	}
+
+  :root {
+    --bg: #0f0f0f;
+    --text: #ffffff;
+    --accent: #38bdf8;
+  }
+
+  body {
+     margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  }
+
+  .container {
+    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  }
+
+  .logo-wrapper {
+    display: block;
+  }
+
+  .logo {
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .logo:hover {
+    transform: scale(1.08);
+  }
+
+  h1 {
+    font-size: clamp(1rem, 2.2vw, 1.6rem);
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .instagram {
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .instagram:hover {
+    text-decoration: underline;
+  }
+
+  .instagram {
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .instagram:hover {
+    transform: scale(1.15);
+    color: #e1306c;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 300;
+    opacity: 0.6;
+  }
+
+  /* Tablet */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .logo {
+      max-width: 360px;
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1025px) {
+    .logo {
+      max-width: 480px;
+    }
+  }
+</style>
